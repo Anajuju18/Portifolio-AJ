@@ -1,25 +1,16 @@
 const data_agents = []
 
 function addAgent(){
-    /*
-    -------------------------
-    PARTE QUE RECEBE OS DADOS
-    -------------------------
-    */
+   
     const form = document.querySelector('#formAgent')
 
-    const inputNomeAgent = form.querySelector('input[name="nome"]')
+    const inputNomAgent = form.querySelector('input[name="nome"]')
 
-    const selectRegional = form.querySelector('select[name="regional"]')
+    const selectReg = form.querySelector('select[name="regional"]')
 
-    agent = {nome: inputNomeAgent.value, regiao: selectRegional.value};
+    agent = {nome: inputNomAgent.value, regiao: selectReg.value};
     data_agents.push(agent)
     
-     /*
-    ------------------------------
-        PARTE QUE INSERE NA TABELA
-    ------------------------------
-    */
     const table = document.querySelector('#table_agent')
 
     const line = document.createElement('tr')
@@ -28,8 +19,8 @@ function addAgent(){
     const columRegiao = document.createElement('td')
 
     columId.textContent = data_agents.length;
-    columNome.textContent = inputNomeAgent.value
-    columRegiao.textContent = selectRegional.value
+    columNome.textContent = inputNomAgent.value
+    columRegiao.textContent = selectReg.value
 
     line.appendChild(columId);
     line.appendChild(columNome);
@@ -43,16 +34,11 @@ function addAgent(){
 }
 
 function addAgentReport () {
-    /*
-    ------------------------------
-        PARTE QUE INSERE NO SELECT
-        ---------------------------
-    */
-    // Obtém referência do formulário
+  
     form = document.querySelector('#formReport')
-    // Obtém o valor dos campos de entrada
+ 
     const select = document.querySelector('#select_agent');
-    // Cria um elemento <option>
+   
     const op = document.createElement('option');
 
     data_agents.forEach(agent=>{
