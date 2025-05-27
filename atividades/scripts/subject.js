@@ -11,11 +11,10 @@ function addsubject() {
     //referencia form do html
     const form = document.querySelector('#formSubject')
     
-    // Obtém o valor do campo de entrada
-    const input_descricao = form.querySelector('input[name="descricao"]')
+    const input_desc = form.querySelector('input[name="descricao"]')
 
-    //adiciona esse elemento no array
-    subject = {descricao: input_descricao.value};
+    
+    subject = {descricao: input_desc.value};
     data_subjects.push(subject)
     
 
@@ -41,7 +40,7 @@ function addsubject() {
     id_colum.textContent = data_subjects.length;
 
     //adiciona o texto do conteudo à variavel 
-    colum_conteudo.textContent = input_descricao.value
+    colum_conteudo.textContent = input_desc.value
 
     //adiciona os elementos no html
     line.appendChild(id_colum);
